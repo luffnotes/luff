@@ -1,0 +1,68 @@
+name: Bug
+description: Report something that is not working right.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Issues are public. Do not include notes or private file names, and check screenshots for personal details before uploading.
+  - type: input
+    id: version
+    attributes:
+      label: Luff version
+      description: Found in Settings > About.
+      placeholder: "0.9.13"
+    validations:
+      required: true
+  - type: dropdown
+    id: windows
+    attributes:
+      label: Windows
+      options:
+        - Windows 11
+        - Windows 10
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: Installed or portable
+      options:
+        - Installed
+        - Portable
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps
+      description: List the steps to reproduce the problem.
+      placeholder: |
+        1. New note in Botanical
+        2. Insert > Chart
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+  - type: textarea
+    id: pictures
+    attributes:
+      label: Screenshots
+      description: Optional. Make sure screenshots do not show anything private before uploading.
+  - type: checkboxes
+    id: private
+    attributes:
+      label: Before you submit
+      options:
+        - label: This report contains no private information.
+          required: true
